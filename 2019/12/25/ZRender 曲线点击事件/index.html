@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="最近做项目使用到了ZRender ZRender 是二维绘图引擎，它提供 Canvas、SVG、VML 等多种渲染方式。ZRender 也是 ECharts 的渲染器，绘图的时候特别方便。 如果想在画布中绘制图片，使用new zrender.Image">
+<meta name="description" content="ZRender 曲线点击事件使用ZRender 绘制曲线，并给每条曲线都添加上对应的点击事件 查询ZRender 相关信息时候，拜读到了这样的一篇 ，给了我很大的启发。 首先是初次绘制曲线，绘制的时候就给每个曲线加上相应的点击事件。 1234567891011121314151617var polyline = new zrender.Polyline(    &amp;#123;        styl">
 <meta name="keywords" content="ZRender">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZRender使用中关于图片裁剪、拖拽问题">
-<meta property="og:url" content="http://yoursite.com/2019/09/03/ZRender使用中关于图片裁剪、拖拽问题/index.html">
+<meta property="og:title" content="ZRender 曲线点击事件">
+<meta property="og:url" content="http://yoursite.com/2019/12/25/ZRender 曲线点击事件/index.html">
 <meta property="og:site_name" content="Evenssi">
-<meta property="og:description" content="最近做项目使用到了ZRender ZRender 是二维绘图引擎，它提供 Canvas、SVG、VML 等多种渲染方式。ZRender 也是 ECharts 的渲染器，绘图的时候特别方便。 如果想在画布中绘制图片，使用new zrender.Image">
+<meta property="og:description" content="ZRender 曲线点击事件使用ZRender 绘制曲线，并给每条曲线都添加上对应的点击事件 查询ZRender 相关信息时候，拜读到了这样的一篇 ，给了我很大的启发。 首先是初次绘制曲线，绘制的时候就给每个曲线加上相应的点击事件。 1234567891011121314151617var polyline = new zrender.Polyline(    &amp;#123;        styl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/zrender1.png">
-<meta property="og:image" content="http://yoursite.com/images/zrender2.png">
-<meta property="og:image" content="http://yoursite.com/images/zrender3.png">
-<meta property="og:updated_time" content="2019-12-25T13:11:13.934Z">
+<meta property="og:updated_time" content="2019-12-25T13:12:30.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZRender使用中关于图片裁剪、拖拽问题">
-<meta name="twitter:description" content="最近做项目使用到了ZRender ZRender 是二维绘图引擎，它提供 Canvas、SVG、VML 等多种渲染方式。ZRender 也是 ECharts 的渲染器，绘图的时候特别方便。 如果想在画布中绘制图片，使用new zrender.Image">
-<meta name="twitter:image" content="http://yoursite.com/images/zrender1.png">
+<meta name="twitter:title" content="ZRender 曲线点击事件">
+<meta name="twitter:description" content="ZRender 曲线点击事件使用ZRender 绘制曲线，并给每条曲线都添加上对应的点击事件 查询ZRender 相关信息时候，拜读到了这样的一篇 ，给了我很大的启发。 首先是初次绘制曲线，绘制的时候就给每个曲线加上相应的点击事件。 1234567891011121314151617var polyline = new zrender.Polyline(    &amp;#123;        styl">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/03/ZRender使用中关于图片裁剪、拖拽问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/25/ZRender 曲线点击事件/">
 
 
 
 
 
-  <title>ZRender使用中关于图片裁剪、拖拽问题 | Evenssi</title>
+  <title>ZRender 曲线点击事件 | Evenssi</title>
   
 
 
@@ -267,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/ZRender使用中关于图片裁剪、拖拽问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/ZRender 曲线点击事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Evenssi">
@@ -284,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ZRender使用中关于图片裁剪、拖拽问题</h1>
+          <h1 class="post-title" itemprop="name headline">ZRender 曲线点击事件</h1>
         
 
         <div class="post-meta">
@@ -296,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T20:58:44+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T21:12:44+08:00">
+                2019-12-25
               </time>
             
 
@@ -356,14 +352,16 @@
       
 
       
-        <p> 最近做项目使用到了ZRender<br> ZRender 是二维绘图引擎，它提供 Canvas、SVG、VML 等多种渲染方式。ZRender 也是 ECharts 的渲染器，绘图的时候特别方便。<br> 如果想在画布中绘制图片，使用new zrender.Image</p>
-<a id="more"></a>
-<p> 假如图片路径会存放在一个数组里面，然后通过for循环，绘制图片，那么图片都在同一个位置，最后绘制的会覆盖住之前的。所以设置draggable属性为true，图片就可以随意拖拽，下面的图片也就看的到了。<br> 如果在绘制前先对图片进行裁剪的话，像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var data=[&apos;../sth/sth/uname.jpg&apos;,&apos;../sth/sth/QQ图片20190312124017.jpg&apos;];</span><br><span class="line">    var zr = zrender.init(document.getElementById(&apos;main&apos;));</span><br><span class="line">    var group = new zrender.Group();          </span><br><span class="line">    var circleCut= new zrender.Circle(&#123;    //裁剪区域，注意此时circleCut是写在for循环外的额</span><br><span class="line">        shape: &#123;</span><br><span class="line">            cx: 275,</span><br><span class="line">            cy: 275,</span><br><span class="line">            r: 75</span><br><span class="line">        &#125;,</span><br><span class="line">        style:&#123;</span><br><span class="line">            fill:&apos;#fff&apos;,</span><br><span class="line">            stroke:&apos;#000&apos;,</span><br><span class="line">            lineWidth:2</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    for(var i = 0;i&lt;data.length;i++)&#123;</span><br><span class="line">        var img1 = new zrender.Image(&#123;</span><br><span class="line">        style: &#123;</span><br><span class="line">            image: data[i],</span><br><span class="line">            x: 200,</span><br><span class="line">            y: 200,</span><br><span class="line">            width: 150,</span><br><span class="line">            height: 150</span><br><span class="line">        &#125;,</span><br><span class="line">        draggable: true</span><br><span class="line">    &#125;)</span><br><span class="line">    img1.setClipPath(circleCut);</span><br><span class="line">    group.add(img1); </span><br><span class="line">    &#125;</span><br><span class="line">    zr,add(group);</span><br></pre></td></tr></table></figure>
+        <h2 id="ZRender-曲线点击事件"><a href="#ZRender-曲线点击事件" class="headerlink" title="ZRender 曲线点击事件"></a>ZRender 曲线点击事件</h2><p>使用ZRender 绘制曲线，并给每条曲线都添加上对应的点击事件</p>
+<p>查询ZRender 相关信息时候，拜读到了这样的一篇</p>
+<p>，给了我很大的启发。</p>
+<p>首先是<strong>初次绘制</strong>曲线，绘制的时候就给每个曲线加上相应的点击事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polyline = <span class="keyword">new</span> zrender.Polyline(</span><br><span class="line">    &#123;</span><br><span class="line">        style: &#123;</span><br><span class="line">            stroke:eveItem.color,</span><br><span class="line">            lineDash:dash,</span><br><span class="line">            lineWidth:eveItem.lineWidth,</span><br><span class="line">        &#125;,</span><br><span class="line">        shape:&#123;</span><br><span class="line">            points:data, <span class="comment">//参看官方文档</span></span><br><span class="line">            smooth:<span class="number">0.3</span>,</span><br><span class="line">            smoothConstraint:[[<span class="number">0</span>, <span class="number">0</span>], [maxWidth, maxHeight]],</span><br><span class="line">        &#125;,</span><br><span class="line">        relateData:eveItem,<span class="comment">//当前曲线上的相关信息，包括曲线的颜色，线宽等~</span></span><br><span class="line">        cursor:<span class="string">'default'</span>   <span class="comment">//鼠标在曲线的点击范围内时，鼠标样式改变，提醒用户可以点击。</span></span><br><span class="line">    &#125;);</span><br><span class="line">self.clickEle(polyline);<span class="comment">//添加上点击事件</span></span><br><span class="line">group.add(polyline);</span><br></pre></td></tr></table></figure>
 
-<p> 两张图一开始是重叠的，通过拖拽，可以将上面的一张移开，但是我发现下面的一张却拖拽不了（没有裁剪的时候是可以都可以拖拽的），虽然两张图确实是都被裁剪了，但是却出现了这样的问题<br> <img src="/images/zrender1.png" alt="在这里插入图片描述"><br> 查看源码，在获取e.target处加了console.log(e.target);<br> <img src="/images/zrender2.png" alt="在这里插入图片描述"><br> 果然，下面先绘制的那张鼠标获取不到对象，是undefined,难怪拖拽不了，这个_dragStart里面的if根本就进不去嘛。<br> 各种试验之后，我把circleCut的定义也放到了for循环里面，然后就可以了，<strong>两张都可以拖拽了</strong>。。：）<br> <img src="/images/zrender3.png" alt="在这里插入图片描述"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;main&quot; style=&quot;width:500px;height:500px;border: 1px solid teal&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;./zrender.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var data=[&apos;../sth/sth/uname.jpg&apos;,&apos;../sth/sth/QQ图片20190312124017.jpg&apos;];</span><br><span class="line">    var zr = zrender.init(document.getElementById(&apos;main&apos;));</span><br><span class="line">    var group = new zrender.Group();</span><br><span class="line">    for(var i = 0;i&lt;data.length;i++)&#123;</span><br><span class="line">        var circleCut1= new zrender.Circle(&#123;    //裁剪区域</span><br><span class="line">        shape: &#123;</span><br><span class="line">            cx: 275,</span><br><span class="line">            cy: 275,</span><br><span class="line">            r: 75</span><br><span class="line">        &#125;,</span><br><span class="line">        style:&#123;</span><br><span class="line">            fill:&apos;#fff&apos;,</span><br><span class="line">            stroke:&apos;#000&apos;,</span><br><span class="line">            lineWidth:2</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">        var img1 = new zrender.Image(&#123;</span><br><span class="line">        style: &#123;</span><br><span class="line">            image: data[i],</span><br><span class="line">            x: 200,</span><br><span class="line">            y: 200,</span><br><span class="line">            width: 150,</span><br><span class="line">            height: 150</span><br><span class="line">        &#125;,</span><br><span class="line">        zlevel:level++,</span><br><span class="line">        draggable: true</span><br><span class="line">    &#125;)</span><br><span class="line">    img1.setClipPath(circleCut1);</span><br><span class="line">    group.add(img1); </span><br><span class="line">    &#125;</span><br><span class="line">    zr.add(group); </span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">clickEle:<span class="function"><span class="keyword">function</span>(<span class="params">zrPlEle</span>)</span>&#123;</span><br><span class="line">        	<span class="keyword">var</span> self=<span class="keyword">this</span>;</span><br><span class="line">        	zrPlEle.on(<span class="string">'click'</span>,()=&gt;&#123; </span><br><span class="line">        		<span class="comment">//这里写上 点击曲线之后要做的事情，比如说更改曲线的样式属性等~</span></span><br><span class="line">                zrPlEle.relateData.color = ... ... </span><br><span class="line">        	&#125;);        </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
+<p>当对曲线进行操作之后，<strong>更新</strong>曲线绘制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">childs.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(item.type==<span class="string">'polyline'</span>)&#123;</span><br><span class="line">        <span class="comment">//如果是对data进行更新了,就使用attr更新数据</span></span><br><span class="line">        item.attr(&#123;</span><br><span class="line">            shape:&#123;</span><br><span class="line">                points:data</span><br><span class="line">            &#125;&#125;);</span><br><span class="line">        <span class="comment">//如果是对style进行了更新，也是一样的</span></span><br><span class="line">        item.attr(&#123;</span><br><span class="line">            style:&#123;</span><br><span class="line">                ... ...</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -395,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/12/25/我的React笔记/" rel="next" title="我的React笔记">
+                <i class="fa fa-chevron-left"></i> 我的React笔记
               </a>
             
           </div>
@@ -404,10 +402,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/25/我的React笔记/" rel="prev" title="我的React笔记">
-                我的React笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -459,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -538,6 +541,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZRender-曲线点击事件"><span class="nav-number">1.</span> <span class="nav-text">ZRender 曲线点击事件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
