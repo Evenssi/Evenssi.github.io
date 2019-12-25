@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ZRender,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="React：facebook团队开源 学习前提：js掌握，es6/7掌握 学习：React是最流行的，维护好，vue是最火的。 1.React中的核心概念 虚拟dom dom的本质：浏览器中的概念，用js对象来表示页面上的元素，提供操作dom的的api  虚拟dom：框架中的概念，是程序员用js对象来模拟页面上的dom和dom嵌套(也就是虚拟手动模拟虚拟的dom树) 123456789101112">
+<meta name="keywords" content="ZRender">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的React笔记">
+<meta property="og:url" content="http://yoursite.com/2019/12/25/我的React笔记/index.html">
+<meta property="og:site_name" content="Evenssi">
+<meta property="og:description" content="React：facebook团队开源 学习前提：js掌握，es6/7掌握 学习：React是最流行的，维护好，vue是最火的。 1.React中的核心概念 虚拟dom dom的本质：浏览器中的概念，用js对象来表示页面上的元素，提供操作dom的的api  虚拟dom：框架中的概念，是程序员用js对象来模拟页面上的dom和dom嵌套(也就是虚拟手动模拟虚拟的dom树) 123456789101112">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-25T12:41:16.570Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的React笔记">
+<meta name="twitter:description" content="React：facebook团队开源 学习前提：js掌握，es6/7掌握 学习：React是最流行的，维护好，vue是最火的。 1.React中的核心概念 虚拟dom dom的本质：浏览器中的概念，用js对象来表示页面上的元素，提供操作dom的的api  虚拟dom：框架中的概念，是程序员用js对象来模拟页面上的dom和dom嵌套(也就是虚拟手动模拟虚拟的dom树) 123456789101112">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/25/我的React笔记/">
+
+
+
+
+
+  <title>我的React笔记 | Evenssi</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Evenssi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">寒来暑往，秋收冬藏</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/我的React笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evenssi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evenssi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我的React笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T20:40:23+08:00">
+                2019-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目学习/" itemprop="url" rel="index">
+                    <span itemprop="name">项目学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>React：facebook团队开源</p>
+<p>学习前提：js掌握，es6/7掌握</p>
+<p>学习：React是最流行的，维护好，vue是最火的。</p>
+<h2 id="1-React中的核心概念"><a href="#1-React中的核心概念" class="headerlink" title="1.React中的核心概念"></a>1.React中的核心概念</h2><ul>
+<li><h4 id="虚拟dom"><a href="#虚拟dom" class="headerlink" title="虚拟dom"></a>虚拟dom</h4><ul>
+<li><p>dom的本质：浏览器中的概念，用js对象来表示页面上的元素，提供操作dom的的api</p>
+</li>
+<li><p>虚拟dom：框架中的概念，是程序员用js对象来模拟页面上的dom和dom嵌套(也就是虚拟手动模拟虚拟的dom树)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = &#123;</span><br><span class="line">	tagName:<span class="string">''</span>,</span><br><span class="line">     attrs:&#123;&#125;,</span><br><span class="line">	childrens:&#123;</span><br><span class="line">		<span class="string">'hhh'</span>,</span><br><span class="line">		&#123;</span><br><span class="line">			tagName:<span class="string">''</span>,</span><br><span class="line">			attrs:[],</span><br><span class="line">		    childrens:&#123;</span><br><span class="line">				<span class="string">'ppp'</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>总结：虚拟dom的本质：就是用js对象的形式，来模拟页面上DOM元素和嵌套关系，（虚拟DOM是以js对象的形式存在的）</p>
+<p>目的：为了实现页面元素的高效更新。</p>
+</li>
+</ul>
+<ul>
+<li><h4 id="Diff算法"><a href="#Diff算法" class="headerlink" title="Diff算法"></a>Diff算法</h4><ul>
+<li><p>tree diff ：新旧两个dom树，逐层对比的过程。当对比完毕那么需要被更新的元素就可以找到。</p>
+</li>
+<li><p>component diff ：在进行tree diff 的时候，每一层组件级别的对比。</p>
+<p>– 如果对比前后组建的类型相同，就<strong>暂时</strong>认为此组件不需要更新；如果对比前后的组件类型不同就移除旧组件，创建新组件，追加到页面中。</p>
+</li>
+<li><p>element diff：在进行组件对比的时候，如果两个组件的类型相同，就需要进行元素级别的对比。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Webpack-4-X基本配置"><a href="#2-Webpack-4-X基本配置" class="headerlink" title="2.Webpack 4.X基本配置"></a>2.Webpack 4.X基本配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1，新建空文件夹，vs code打开</span><br><span class="line">2，npm init -y 初始化</span><br><span class="line">3, 创建 src  dist 文件夹</span><br><span class="line">4, src中新建index.html,index.js</span><br><span class="line">5, 装webpack 包 cnpm i webpack -D</span><br><span class="line">   和cli（脚手架） cnpm i webpack-cli -D</span><br><span class="line">6，webpack 4.x 提供了约定大于配置的概念，目的是为了尽量减少配置文件的提及</span><br><span class="line">   根目录下新建 webpack.config.js</span><br><span class="line">   在webpack.config.js里面设定好mode (必备) </span><br><span class="line">   就可以执行 webpack 进行打包了 （此时dist里面自动生成了一个main.js）</span><br><span class="line">7, 但是只要修改了页面中的东西，每次都必须进行重新打包 为了方便 </span><br><span class="line">   在安装 cnpm i  webpack-dev-server -D</span><br><span class="line">   配置 package.json 中的scripts -&gt;&quot;dev&quot;: &quot;webpack-dev-server&quot;</span><br><span class="line">   运行 npm run dev 就可以运行项目</span><br><span class="line">8, 项目运行之后默认不是打开的项目首页，且重复读写indexhtml文件也会损伤磁盘</span><br><span class="line">   所以安装 cnpm i html-webpack-plugin -D  在内存中生成虚拟的index.html</span><br><span class="line">   安装之后，在webpack.config.js中配置</span><br><span class="line">9, react项目中必须的几个插件 </span><br><span class="line">   cnpm i babel-core babel-loader babel-plugin-transform-runtime -D</span><br><span class="line">   cnpm i babel-preset-env babel-preset-stage-0 babel-preset-react -D</span><br><span class="line">   安装之后首先在 webpack.config.js 中配置第三方的规则</span><br><span class="line">   再 新建 .babelrc 文件 写入相应的presets和plugins</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>:&#123;<span class="comment">//所有的第三方</span></span><br><span class="line">       rules:[<span class="comment">//第三方的匹配规则</span></span><br><span class="line">           &#123;</span><br><span class="line">               test: <span class="regexp">/\.js|jsx$/</span>,<span class="attr">use</span>:<span class="string">'babel-loader'</span>,<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span></span><br><span class="line">           &#125; </span><br><span class="line">       ] </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"presets"</span>: [</span><br><span class="line">        <span class="string">"env"</span>,<span class="string">"stage-0"</span>,<span class="string">"react"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">        <span class="string">"transform-runtime"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-React中渲染DOM"><a href="#3-React中渲染DOM" class="headerlink" title="3.React中渲染DOM"></a>3.React中渲染DOM</h2><ul>
+<li>方法1</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这两个名称必须这样写</span></span><br><span class="line"><span class="comment">//cnpm i react react-dom -S</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>   <span class="comment">//创建组件 虚拟dom 生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>   <span class="comment">//创建好的组件 虚拟dom 放在页面上进行展示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建虚拟dom React.createElement</span></span><br><span class="line"><span class="comment">//参数 1:创建的元素的类型 字符串 表示当前元素的名称</span></span><br><span class="line"><span class="comment">//参数 2:是一个对象或者null 表示当前这个dom元素的属性</span></span><br><span class="line"><span class="comment">//参数 3:子节点 包括 文本子节点或者其他内嵌的元素</span></span><br><span class="line"><span class="comment">//参数 n:其他的子节点</span></span><br><span class="line"><span class="keyword">const</span> myH1 = React.createElement(</span><br><span class="line">    <span class="string">'h1'</span>,</span><br><span class="line">    &#123;</span><br><span class="line">        id:<span class="string">'myh1'</span>,</span><br><span class="line">        title:<span class="string">'this is a h1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'这是一个大大的h1'</span></span><br><span class="line">)  <span class="comment">//创建了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用reactdom进行渲染 ReactDOM.render</span></span><br><span class="line"><span class="comment">//参数 1：要被渲染的的虚拟dom元素</span></span><br><span class="line"><span class="comment">//参数 2: 指定页面上的一个进行承载的容器</span></span><br><span class="line">ReactDOM.render(myH1,<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法2</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//jsx</span></span><br><span class="line"><span class="comment">//这两个名称必须这样写</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>   <span class="comment">//创建组件 虚拟dom 生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>   <span class="comment">//创建好的组件 虚拟dom 放在页面上进行展示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建虚拟dom</span></span><br><span class="line"><span class="comment">//在js中 默认是不可以 直接写html的代码</span></span><br><span class="line"><span class="comment">//所以这里使用babel进行转换</span></span><br><span class="line"><span class="comment">//这样在js里面写类似于html写的语言，叫做jsx 语法 是符合 xml的js</span></span><br><span class="line"><span class="comment">//本质就是 将下面的代码 直接转换为了 creatElement里面的东西</span></span><br><span class="line"><span class="keyword">const</span> myDiv = &lt;div id="mydiv" title="this is a div"&gt;</span><br><span class="line">                这是一个div</span><br><span class="line">                &lt;p&gt;这是一个p元素&lt;/p&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用reactdom进行渲染</span></span><br><span class="line"><span class="comment">//参数 1：要被渲染的的虚拟dom元素</span></span><br><span class="line"><span class="comment">//参数 2: 指定页面上的一个进行承载的容器</span></span><br><span class="line">ReactDOM.render(myDiv,<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>jsx语法</p>
+<p>当需要在jsx里面混合使用js表达式的时候，用{}包裹变量</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;<span class="keyword">let</span> str = <span class="string">'hhh'</span>;<span class="keyword">let</span> boo = <span class="literal">true</span>;<span class="keyword">let</span> title = <span class="string">'divvv'</span>;</span><br><span class="line"><span class="keyword">const</span> h1 = &lt;h1&gt;我爱北京天安门&lt;/h1&gt;;</span><br><span class="line"><span class="keyword">let</span> arr = [&lt;h1&gt;这是h1&lt;/h1&gt;,&lt;h2&gt;这是h2&lt;<span class="regexp">/h2&gt;]</span></span><br><span class="line"><span class="regexp">let arrScore = [69,30,49,99]</span></span><br><span class="line"><span class="regexp">&lt;div title=&#123;title&#125;&gt; &#123;a+1&#125; &lt;hr/</span>&gt; 这是&#123;str&#125; &lt;hr/&gt; &#123;boo ? <span class="string">'真的'</span>:<span class="string">'假的'</span>&#125;</span><br><span class="line">    &#123;h1&#125;  &lt;hr/&gt;</span><br><span class="line">    &#123;arr&#125; &lt;hr/&gt;</span><br><span class="line">    &#123;arrScore.map(<span class="function"><span class="params">item</span>=&gt;</span>item&gt;<span class="number">60</span>?<span class="string">'及格'</span>:<span class="string">'不及格'</span>)&#125;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>给元素添加class的时候要使用 <code>className</code>进行替代，label上的for属性，<code>htmlFor</code>进行替代</p>
+<p>与Vue类似，必须有唯一的根元素进行包裹</p>
+<h2 id="4-React组件"><a href="#4-React组件" class="headerlink" title="4.React组件"></a>4.React组件</h2><ul>
+<li><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种创建组件的方法  构造函数</span></span><br><span class="line"><span class="comment">//包括 给组件传递 数据 ，组件必须先接收参数，才能使用  只读</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>)</span>&#123;  <span class="comment">//必须是 大写字母 开头</span></span><br><span class="line">    <span class="comment">//组件中必须 return 合法的jsx 虚拟dom元素。 如果return null 那就是表明该组件什么也不渲染</span></span><br><span class="line">    <span class="keyword">return</span> &lt;h1&gt;ppp---&#123;props.name&#125;---&#123;props.age&#125;&lt;/h1&gt;</span><br><span class="line">    <span class="comment">//组件中的props都是只读的，不能再这里面重新赋值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> dog = &#123;<span class="attr">name</span>:<span class="string">'red'</span>,<span class="attr">age</span>:<span class="number">1</span>&#125;;</span><br><span class="line">ReactDOM.render(&lt;div&gt;&lt;Hello name='yellow' age=&#123;dog.age&#125;&gt;&lt;/Hello&gt;&lt;/div&gt;,<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//第二种创建组件的方法 class</span></span><br><span class="line">  <span class="comment">//在class 创建的组件中，传递的参数不需接收，可以直接使用 this.props.XXX进行访问  只读</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 组件名称 <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">      <span class="keyword">constructor</span>()&#123;</span><br><span class="line">          <span class="keyword">super</span>();</span><br><span class="line">          <span class="keyword">this</span>.state = &#123;  <span class="comment">//自己的私有属性 this.state就相当于 vue中的data()&#123;return &#123;&#125;&#125;  可读可写</span></span><br><span class="line">              msg:<span class="string">'我是state里面的msg'</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      render()&#123;</span><br><span class="line">          <span class="keyword">this</span>.state.msg = <span class="string">'我修改了state里面的msg'</span></span><br><span class="line">          <span class="comment">//render里面必须返回合法的jsx虚拟dom结构 或是 null</span></span><br><span class="line">          <span class="keyword">return</span> &lt;div&gt;123456 &#123;this.props.XXX&#125;---&lt;p&gt;&#123;this.state.msg&#125;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> M1 = &#123;<span class="attr">XXX</span>:xxx&#125;</span><br><span class="line">  ReactDOM.render(&lt;div&gt;&lt;Movie &#123;...M1&#125;&gt;&lt;/Movie&gt;&lt;/div&gt;,<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h5 id="对比两种创建组建的方式"><a href="#对比两种创建组建的方式" class="headerlink" title="对比两种创建组建的方式"></a>对比两种创建组建的方式</h5><ol>
+<li><p>使用 class关键字创建的组件，除了有只读的props，还有自己的生命周期和可读可写的私有数据(this.state)；但是function创建的只有只读的props</p>
+</li>
+<li><p>使用 构造函数 function 创建的组件，叫做“无状态组件”</p>
+<p>使用 class 创建的组件，叫做“有状态组件”</p>
+<p>注意：当 一个组件 需要有自己的私有数据，就使用class创建；反之亦然</p>
+<p>​           官方说：无状态组件的运行效率会高一些，但是还是推荐使用class创建有状态组件<del>~</del></p>
+</li>
+<li><p>组件中的props 和 state区别</p>
+<p>props：外界传递过来的数据，只读</p>
+<p>state :组件私有的数据，一般是ajax获取到的，可读可写</p>
+</li>
+</ol>
+<h2 id="5-React中使用Style、css样式"><a href="#5-React中使用Style、css样式" class="headerlink" title="5.React中使用Style、css样式"></a>5.React中使用Style、css样式</h2><ul>
+<li><p>​    style 行内样式</p>
+<p>​    注意：字符串类型 样式值 要使用引号包裹 ；数值类型 直接写</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style = &#123;&#123;<span class="attr">color</span>:<span class="string">'red'</span>,<span class="attr">fontSize</span>:<span class="string">'35px'</span>,<span class="attr">zIndex</span>:<span class="number">2</span>&#125;&#125;&gt;&lt;/h1&gt;</span><br><span class="line"><span class="comment">//可以与组件定义写在一个jsx页面中，或者可以单独写在一个style.js文件中，在jsx页面中import进来使用</span></span><br><span class="line"><span class="keyword">const</span> itemStyle = &#123; <span class="attr">style1</span>:&#123;<span class="attr">color</span>:<span class="string">'red'</span>,<span class="attr">fontSize</span>:<span class="string">'35px'</span>,<span class="attr">zIndex</span>:<span class="number">2</span>&#125;</span><br><span class="line">                  style2:&#123;&#125;&#125;; </span><br><span class="line">&lt;h1 style = &#123;itemStyle.style1&#125;&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>​    css 样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.title</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">35px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cssobj <span class="keyword">from</span> <span class="string">'@/css/cmtList.css'</span>;<span class="comment">//这样导入的样式表，一般在整个项目中都生效,所以要对laoder进行配置</span></span><br><span class="line">&lt;h1 className=&#123;cssobj.title&#125;&gt;评论列表&lt;<span class="regexp">/h1&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：要安装第三方loade才能解析 css文件  cnpm i style-loader css-loader -D   </p>
+<p>​            并在webpack.config.js的modules—rules中进行配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test:<span class="regexp">/.css$/</span>,</span><br><span class="line">use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader?modules'</span>],</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ZRender/" rel="tag"># ZRender</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/ZRender使用中关于图片裁剪、拖拽问题/" rel="next" title="ZRender使用中关于图片裁剪、拖拽问题">
+                <i class="fa fa-chevron-left"></i> ZRender使用中关于图片裁剪、拖拽问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Evenssi">
+            
+              <p class="site-author-name" itemprop="name">Evenssi</p>
+              <p class="site-description motion-element" itemprop="description">藏,就是收藏起来的意思</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Evenssi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:741005294@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-React中的核心概念"><span class="nav-number">1.</span> <span class="nav-text">1.React中的核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟dom"><span class="nav-number">1.0.1.</span> <span class="nav-text">虚拟dom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff算法"><span class="nav-number">1.0.2.</span> <span class="nav-text">Diff算法</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Webpack-4-X基本配置"><span class="nav-number">2.</span> <span class="nav-text">2.Webpack 4.X基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-React中渲染DOM"><span class="nav-number">3.</span> <span class="nav-text">3.React中渲染DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-React组件"><span class="nav-number">4.</span> <span class="nav-text">4.React组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对比两种创建组建的方式"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">对比两种创建组建的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-React中使用Style、css样式"><span class="nav-number">5.</span> <span class="nav-text">5.React中使用Style、css样式</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Evenssi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
